@@ -1,0 +1,191 @@
+<html>
+<head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['gantt']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function daysToMilliseconds(days) {
+      return days * 24 * 60 * 60 * 1000;
+    }
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Task ID');
+      data.addColumn('string', 'Task Name');
+      data.addColumn('string', 'Resource');
+      data.addColumn('date', 'Start Date');
+      data.addColumn('date', 'End Date');
+      data.addColumn('number', 'Duration');
+      data.addColumn('number', 'Percent Complete');
+      data.addColumn('string', 'Dependencies');
+
+      data.addRows([
+        ['Research', 'แก้บัคไทม์ไลน์', null,
+         new Date(2015, 0, 1), new Date(2015, 0, 5), null,  100,  null],
+        ['Write', 'Write paper', 'write',
+         null, new Date(2015, 0, 9), daysToMilliseconds(3), 25, 'Research,Outline'],
+        ['Cite', 'Create bibliography', 'write',
+         null, new Date(2015, 0, 7), daysToMilliseconds(1), 20, 'Research'],
+        ['Complete', 'Hand in paper', 'complete',
+         null, new Date(2015, 0, 10), daysToMilliseconds(1), 0, 'Cite,Write'],
+        ['Outline', 'Outline paper', 'write',
+         null, new Date(2015, 0, 6), daysToMilliseconds(1), 100, 'Research']
+      ]);
+
+      var options = {
+        height: 275,
+        gantt: {
+            criticalPathEnabled: false,
+            innerGridHorizLine: {
+                stroke: 0 ,
+                strokeWidth: 0
+              },
+              innerGridTrack: {fill: '#60657d'},
+              innerGridDarkTrack: {fill: '#474e68'}
+          }
+      };
+
+
+      var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+}
+
+  </script>
+    <link rel="stylesheet" href="./styles/root.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/sidebar-board.css">
+    <link rel="stylesheet" href="./styles/addTaskbox.css">
+    <link rel="stylesheet" href="./styles/invitebox.css">
+    <link rel="stylesheet" href="./styles/teammate.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="user">
+            ชื่อผู้ใช้
+            <div class="setting">
+                <img class="setting-icon" src="./access/icon/cog-48.png" alt="">
+            </div>
+        </div>
+        <div class="all-menu">
+            <div class="left-menu">
+                <button class="new-task">+ เพิ่มงาน</button>
+                <nav class="pages">
+                    <ul class="each-page">
+                        <li>
+                            <a href="./home.html">โฮมเพจ</a>
+                        </li>
+                        <li>
+                            <a href="./card.html">การ์ด</a>
+                        </li>
+                        <li>
+                            <a href="./timeline.html">ไทม์ไลน์</a>
+                        </li>
+                    </ul>
+                </nav> 
+            </div>
+            <div class="right-menu">
+                <div class="teammate-menu">
+                    <img class="teammate-icon" src="./access/icon/icons8-name-96.png" alt="">
+                    <div class="see-teammate">เพื่อนร่วมทีม</div>
+                </div>
+                <div class="invite-to-project">
+                    <img class="invite-to-project-icon" src="./access/icon/icons8-user-plus-96.png" alt="">
+                    <div class="invite-to-project-btn">เชิญ</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Date-calender | Week,mounth | -->
+    <div class="detail-main">
+        <div class="project-title-box">
+            <div class="project-title">Web Developer</div>
+        </div>
+        <div class="detail-box">
+            <div class="d-date">
+                <div class="date"><input type="date"></div>
+            </div>
+            <div class="m-month">
+                <div onmouseover="onMonthdropdown()" class="show-month">สัปดาห์นี้</div>
+
+                <ul class="month-dropdown">
+                    <li class="month-list" id="7">สัปดาห์นี้</li>
+                    <li class="month-list" id="31">เดือนนี้</li>
+                </ul>
+            </div>
+            <div class="s-search">
+                <input class="search-box" type="search" placeholder="search">
+            </div>
+        </div>
+    </div>
+
+    <!-- TASK FORM BOX -->
+    <div class="task-form-box">
+        <form action="?" class="task-form" data-form>
+            <div class="add-task-title">เพิ่มงาน</div>
+
+            <input type="text" placeholder="ชื่องาน">
+            <textarea class="detail-task" placeholder="รายละเอียดงาน" name="" id="" cols="30" rows="10"></textarea>
+            <input type="text" placeholder="ผู้รับผิดชอบ">
+            <input type="text" placeholder="ส่งภายใน">
+            <input type="date" placeholder="กำหนดส่ง">
+            <input type="text" placeholder="สถานะ">
+            <button type="submit">ตกลง</button>
+        </form>
+    </div>
+
+    <!-- INVITE  FORM BOX-->
+    <div class="invite-form-box">
+        <form action="?" class="invite-form" data-form>
+            <div class="invite-title">เชิญ</div>
+            <div class="email-form">
+                <label for="mail">อีเมล</label>
+                <input type="email" placeholder="ใส่อีเมล">
+            </div>
+            <button type="submit">ตกลง</button>
+        </form>
+    </div>
+
+    <!-- SHOW TEAMMATE BOX -->
+    <div class="teammate-box">
+        <div class="teammate-container">
+            <div class="teammate-title">เพื่อนร่วมทีม</div>
+            <div class="teammate-list">
+                <ul>
+                    <li>teammate 1</li>
+                    <li>teammate 2</li>
+                    <li>teammate 3</li>
+                    <li>teammate 4</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- board-sidebar -->
+    <div class="sidebar-board">
+        <div class="sidebar-board-detail">
+            <div class="board">
+                <div class="board-title">Board</div>
+                <button class="add-board-btn">+ New Board</button>
+            </div>
+    
+            <div class="list-board">
+                <p class="board-name board-active">Web Developer</p>
+                <p class="board-name">Disign</p>
+                <p class="board-name">Sell</p>
+            </div>
+        </div>
+    </div>
+    
+
+  <div id="chart_div"></div>
+
+  <script src="./scripts/chagePage.js" defer></script>
+  <script src="./scripts/modal-box.js"></script>
+  <script src="./scripts/navStatus.js"></script>
+
+</body>
+</html>

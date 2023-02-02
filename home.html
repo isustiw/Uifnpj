@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/root.css">
+    <link rel="stylesheet" href="./styles/homepage.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/sidebar-board.css">
+    <link rel="stylesheet" href="./styles/addTaskbox.css">
+    <link rel="stylesheet" href="./styles/invitebox.css">
+    <link rel="stylesheet" href="./styles/teammate.css">
+    <title>Homepage</title>
+
+    <script src="./scripts/draganddrop.js" defer></script>
+</head>
+<body>
+    <!-- header section -->
+    <div class="navbar">
+        <div class="user">
+            ชื่อผู้ใช้
+            <div class="setting">
+                <img class="setting-icon" src="./access/icon/cog-48.png" alt="">
+            </div>
+        </div>
+        <div class="all-menu">
+            <div class="left-menu">
+                <button class="new-task">+ เพิ่มงาน</button>
+                <nav class="pages">
+                    <ul class="each-page">
+                        <li>
+                            <a href="./home.html">โฮมเพจ</a>
+                        </li>
+                        <li>
+                            <a href="./card.html">การ์ด</a>
+                        </li>
+                        <li>
+                            <a href="./timeline.html">ไทม์ไลน์</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="right-menu">
+                <div class="teammate-menu">
+                    <img class="teammate-icon" src="./access/icon/icons8-name-96.png" alt="">
+                    <div class="see-teammate">เพื่อนร่วมทีม</div>
+                </div>
+                <div class="invite-to-project">
+                    <img class="invite-to-project-icon" src="./access/icon/icons8-user-plus-96.png" alt="">
+                    <div class="invite-to-project-btn">เชิญ</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- board-sidebar -->
+    <div class="sidebar-board">
+        <div class="sidebar-board-detail">
+            <div class="board">
+                <div class="board-title">Board</div>
+                <button class="add-board-btn">+ New Board</button>
+            </div>
+    
+            <div class="list-board">
+                <p class="board-name board-active">Web Developer</p>
+                <p class="board-name">Disign</p>
+                <p class="board-name">Sell</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- TASK FORM BOX -->
+    <div class="task-form-box">
+        <form action="?" class="task-form" data-form>
+            <div class="add-task-title">เพิ่มงาน</div>
+
+            <input type="text" placeholder="ชื่องาน">
+            <textarea class="detail-task" placeholder="รายละเอียดงาน" name="" id="" cols="30" rows="10"></textarea>
+            <input type="text" placeholder="ผู้รับผิดชอบ">
+            <input type="text" placeholder="ส่งภายใน">
+            <input type="date" placeholder="กำหนดส่ง">
+            <input type="text" placeholder="สถานะ">
+            <button type="submit">ตกลง</button>
+        </form>
+    </div>
+
+    <!-- INVITE  FORM BOX-->
+    <div class="invite-form-box">
+        <form action="?" class="invite-form" data-form>
+            <div class="invite-title">เชิญ</div>
+            <div class="email-form">
+                <label for="mail">อีเมล</label>
+                <input type="email" placeholder="ใส่อีเมล">
+            </div>
+            <button type="submit">ตกลง</button>
+        </form>
+    </div>
+
+    <!-- SHOW TEAMMATE BOX -->
+    <div class="teammate-box">
+        <div class="teammate-container">
+            <div class="teammate-title">เพื่อนร่วมทีม</div>
+            <div class="teammate-list">
+                <ul>
+                    <li>teammate 1</li>
+                    <li>teammate 2</li>
+                    <li>teammate 3</li>
+                    <li>teammate 4</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Date-calender | Week,mounth | -->
+    <div class="detail-main">
+        <div class="project-title-box">
+            <div class="project-title">Web Developer</div>
+        </div>
+        <div class="detail-box">
+            <div class="d-date">
+                <div class="date"><input type="date"></div>
+            </div>
+            <div class="m-month">
+                <div onmouseover="onMonthdropdown()" class="show-month">สัปดาห์นี้</div>
+
+                <ul class="month-dropdown">
+                    <li class="month-list" id="7">สัปดาห์นี้</li>
+                    <li class="month-list" id="31">เดือนนี้</li>
+                </ul>
+            </div>
+            <div class="s-search">
+                <input class="search-box" type="search" placeholder="search">
+            </div>
+        </div>
+    </div>
+
+    <!-- PROGRESS WORK -->
+    <div class="box">
+        <div class="in-box">
+            <div class="box-title">กำลังทำ</div>
+            
+            <p class="task" draggable="true">1</p>
+            <p class="task" draggable="true">2</p>
+            <p class="task" draggable="true">3</p>
+        </div>
+
+
+        <div class="in-box">
+            <div class="box-title">ติดปัญหา</div>
+            
+            <p class="task" draggable="true">4</p>
+        </div>
+
+
+        <div class="in-box">
+            <div class="box-title">เสร็จ</div>
+
+            <p class="task" draggable="true">5</p>
+            <p class="task" draggable="true">6</p>
+            <p class="task" draggable="true">7</p>
+        </div>
+    </div>
+
+
+
+    <script src="./scripts/chagePage.js" defer></script>
+    <script src="./scripts/modal-box.js"></script>
+    <script src="./scripts/navStatus.js"></script>
+</body>
+</html>

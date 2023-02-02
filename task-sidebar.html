@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/root.css">
+    <link rel="stylesheet" href="./styles/task-sidebar.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <div class="tab-container">
+            <button class="task-tab-button active-button" data-id="tab1">
+                Comment
+            </button>
+            <button class="task-tab-button" data-id="tab2">
+                Files
+            </button>
+        </div>
+
+        <div class="tab-content active-tab-content" id="tab1">
+            <div class="comment-container">
+                <div class="show-message">
+                    <div class="message">
+                        <img src="./access/icon/icons8-user-circle-96.png" alt="">
+                        <div class="message-text">สวัสดี</div>
+                    </div>
+
+                    <div class="message">
+                        <img src="./access/icon/icons8-user-circle-96.png" alt="">
+                        <div class="person-message">งานไปถึงไหนแล้ว</div>
+                    </div>
+                </div>
+    
+                <div class="comment-input-box">
+                    <input class="comment-input" type="text">
+                    <button type="submit">ส่งข้อความ</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="tab2">
+            <div class="upload-container">
+                <div class="show-file-uploaded">
+                    <div class="file">
+                        <img class="file-icon" src="./access/icon/icons8-microsoft-excel-2019-96.png" alt="">
+                        <div class="file-name">ข้อมูลผู้ใช้.xlsx</div>
+                    </div>
+
+                    <div class="file">
+                        <img class="file-icon" src="./access/icon/icons8-microsoft-excel-2019-96.png" alt="">
+                        <div class="file-name">การเงิน.xlsx</div>
+                    </div>
+                </div>
+                
+                <div class="upload-box">
+                    <div class="upload-file">
+                        <div class="upload-file-icon">
+                            <img src="./access/icon/icons8-medical-file-96.png" alt="">
+                        </div>
+                        <div class="upload-file-text">
+                            <div>ลากไฟล์</div>
+                            <div>หรือ</div>
+                            <div>ค้นห้าจากอุปกรณ์ของคุณ</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="open-sidebar" id="open-sidebar">
+        <i></i>
+        <span>Sidebar</span>
+    </button>
+
+
+    <script src="./scripts/sidebar-task.js"></script>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/root.css">
+    <link rel="stylesheet" href="./styles/card.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/sidebar-board.css">
+    <link rel="stylesheet" href="./styles/task-sidebar.css">
+    <link rel="stylesheet" href="./styles/addTaskbox.css">
+    <link rel="stylesheet" href="./styles/invitebox.css">
+    <link rel="stylesheet" href="./styles/teammate.css">
+    <title>card</title>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="user">
+            ชื่อผู้ใช้
+            <div class="setting">
+                <img class="setting-icon" src="./access/icon/cog-48.png" alt="">
+            </div>
+        </div>
+        <div class="all-menu">
+            <div class="left-menu">
+                <button class="new-task">+ เพิ่มงาน</button>
+                <nav class="pages">
+                    <ul class="each-page">
+                        <li>
+                            <a href="./home.html">โฮมเพจ</a>
+                        </li>
+                        <li>
+                            <a href="./card.html">การ์ด</a>
+                        </li>
+                        <li>
+                            <a href="./timeline.html">ไทม์ไลน์</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="right-menu">
+                <div class="teammate-menu">
+                    <img class="teammate-icon" src="./access/icon/icons8-name-96.png" alt="">
+                    <div class="see-teammate">เพื่อนร่วมทีม</div>
+                </div>
+                <div class="invite-to-project">
+                    <img class="invite-to-project-icon" src="./access/icon/icons8-user-plus-96.png" alt="">
+                    <div class="invite-to-project-btn">เชิญ</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTINUE NAVBAR DETAIL -->
+    <div class="detail-main">
+        <div class="project-title-box">
+            <div class="project-title">Web Developer</div>
+        </div>
+
+        <div class="detail-box">
+            <div class="d-date">
+                <div class="date"><input type="date"></div>
+            </div>
+            <div class="m-month">
+                <div onmouseover="onMonthdropdown()" class="show-month">สัปดาห์นี้</div>
+
+                <ul class="month-dropdown">
+                    <li class="month-list" id="7">สัปดาห์นี้</li>
+                    <li class="month-list" id="31">เดือนนี้</li>
+                </ul>
+            </div>
+            <div class="s-search">
+                <input class="search-box" type="search" placeholder="search">
+            </div>
+        </div>
+    </div>
+
+    <!-- TASK FORM BOX -->
+    <div class="task-form-box">
+        <form action="?" class="task-form" data-form>
+            <div class="add-task-title">เพิ่มงาน</div>
+
+            <input type="text" placeholder="ชื่องาน">
+            <textarea class="detail-task" placeholder="รายละเอียดงาน" name="" id="" cols="30" rows="10"></textarea>
+            <input type="text" placeholder="ผู้รับผิดชอบ">
+            <input type="text" placeholder="ส่งภายใน">
+            <input type="date" placeholder="กำหนดส่ง">
+            <input type="text" placeholder="สถานะ">
+            <button type="submit">ตกลง</button>
+        </form>
+    </div>
+
+    <!-- INVITE  FORM BOX-->
+    <div class="invite-form-box">
+        <form action="?" class="invite-form" data-form>
+            <div class="invite-title">เชิญ</div>
+            <div class="email-form">
+                <label for="mail">อีเมล</label>
+                <input type="email" placeholder="ใส่อีเมล">
+            </div>
+            <button type="submit">ตกลง</button>
+        </form>
+    </div>
+
+    <!-- SHOW TEAMMATE BOX -->
+    <div class="teammate-box">
+        <div class="teammate-container">
+            <div class="teammate-title">เพื่อนร่วมทีม</div>
+            <div class="teammate-list">
+                <ul>
+                    <li>teammate 1</li>
+                    <li>teammate 2</li>
+                    <li>teammate 3</li>
+                    <li>teammate 4</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- board-sidebar -->
+    <div class="sidebar-board">
+        <div class="sidebar-board-detail">
+            <div class="board">
+                <div class="board-title">Board</div>
+                <button class="add-board-btn">+ New Board</button>
+            </div>
+    
+            <div class="list-board">
+                <p class="board-name board-active">Web Developer</p>
+                <p class="board-name">Disign</p>
+                <p class="board-name">Sell</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- TASK SIDEBAR -->
+    <div class="sidebar" id="sidebar">
+        <button class="close-task-sidebar">x</button>
+
+        <div class="tab-container">
+            <button class="task-tab-button active-button" data-id="tab1">
+                Comment
+            </button>
+            <button class="task-tab-button" data-id="tab2">
+                Files
+            </button>
+        </div>
+
+        <div class="tab-content active-tab-content" id="tab1">
+            <div class="comment-container">
+                <div class="show-message">
+                    <div class="message">
+                        <img src="./access/icon/icons8-user-circle-96.png" alt="">
+                        <div class="message-text">สวัสดี</div>
+                    </div>
+
+                    <div class="message">
+                        <img src="./access/icon/icons8-user-circle-96.png" alt="">
+                        <div class="person-message">งานไปถึงไหนแล้ว</div>
+                    </div>
+                </div>
+    
+                <div class="comment-input-box">
+                    <input class="comment-input" type="text">
+                    <button type="submit">ส่งข้อความ</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="tab2">
+            <div class="upload-container">
+                <div class="show-file-uploaded">
+                    <div class="file">
+                        <img class="file-icon" src="./access/icon/icons8-microsoft-excel-2019-96.png" alt="">
+                        <div class="file-name">ข้อมูลผู้ใช้.xlsx</div>
+                    </div>
+
+                    <div class="file">
+                        <img class="file-icon" src="./access/icon/icons8-microsoft-excel-2019-96.png" alt="">
+                        <div class="file-name">การเงิน.xlsx</div>
+                    </div>
+                </div>
+                
+                <div class="upload-box">
+                    <div class="upload-file">
+                        <div class="upload-file-icon">
+                            <img src="./access/icon/icons8-medical-file-96.png" alt="">
+                        </div>
+                        <div class="upload-file-text">
+                            <div>ลากไฟล์</div>
+                            <div>หรือ</div>
+                            <div>ค้นห้าจากอุปกรณ์ของคุณ</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="board">
+        <div class="card-container">
+        
+            <div class="card">
+                <div class="top-section">
+                    <div class="card-title">แก้บัคไทม์ไลน์</div>
+                    <div class="icon-box">
+                        <img class="chat-icon" src="./access/icon/icons8-chat-room-30 (1).png" alt="">
+                    </div>
+                </div>
+                <div class="middle-section">
+                    <div class="person">
+                        <div class="person-title">ผู้รับผิดชอบ:</div>
+                        <div class="person-icon">
+                            <img class="person-img" src="./access/icon/icons8-user-circle-96.png" alt="">
+                            <img class="person-img" src="./access/icon/icons8-user-circle-96.png" alt="">
+                            <img class="person-img" src="./access/icon/icons8-user-circle-96.png" alt="">
+                        </div>
+                    </div>
+                    <div class="dead-line">
+                        <div class="dead-line-title">กำหนดส่ง:</div>
+                        <div class="dead-line-now">สัปดาห์นี้</div>
+                    </div>
+                </div>
+                <div class="bottom-section">
+                    <div class="date-calender">18/04/2023</div>
+                    <div class="status">
+                        <div class="status-tile">สถานะ:</div>
+                        <div class="status-now">ดำลังดำเนินการ</div>
+                    </div>
+                </div>
+
+                <ul class="status-dropdown">
+                    <li class="status-list" id="status-list-1">กำลังดำเนินการ</li>
+                    <li class="status-list" id="status-list-2">ติดปัญหา</li>
+                    <li class="status-list" id="status-list-3">เสร็จ</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./scripts/sidebar-task.js"></script>
+    <script src="./scripts/chagePage.js" defer></script>
+    <script src="./scripts/modal-box.js"></script>
+    <script src="./scripts/cardStatus.js"></script>
+    <script src="./scripts/navStatus.js"></script>
+</body>
+</html>

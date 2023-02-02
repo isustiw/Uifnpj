@@ -1,0 +1,82 @@
+.sidebar-board{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 5px;
+    background-color: #6B728E;
+    min-height: 100vh;
+    transition: 0.2s;
+    z-index: 1;
+    overflow: hidden;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.sidebar-board:hover{
+    width: 250px;
+}
+
+.sidebar-board-detail {
+    padding-top: 20px;
+}
+.board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.board-title {
+    font-weight: 500;
+    font-size: 22px;
+    padding-bottom: 10px;
+}
+
+.add-board-btn {
+    padding: 4px 10px 4px 10px;
+    border: none;
+    border-radius: 2px;
+    background: rgba(64,66,88,255);
+    box-shadow: 0px 2px 6px #303040;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.list-board {
+    margin-top: 10px;
+    padding-top: 20px;
+    padding-right: 50px;
+    padding-bottom: 10px;
+    width: 250px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.board-name {
+    font-weight: 500;
+    font-size: 20px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+}
+.board-active {
+    background: #454b64;
+}
+
+
+/* Effect */
+
+.board-name:hover, .add-board-btn:hover {
+    cursor: pointer;
+}
+
+.add-board-btn:hover {
+    background-color: #242734;
+    transition: 0.2s;
+}
